@@ -1,0 +1,125 @@
+body {
+  padding-left: 3%;
+  padding-right: 3%;
+  @media #{$medium-up} {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  @media #{$large-up} {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+
+a {
+  border-bottom: 1px dashed;
+  color: #4EB5C6;
+  &:hover,
+  &:active {
+    color: #eea008;
+  }
+}
+
+.button {
+  &.active {
+    background-color: $button-bg-hover;
+  }
+}
+
+.main {
+  padding-top: rem-calc(15);
+  padding-bottom: rem-calc(25);
+}
+
+nav {
+  padding-bottom: rem-calc(20);
+  padding-top: rem-calc(35);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+header > h1 {
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding-bottom: rem-calc(30);
+  padding-top: rem-calc(20);
+  > p {
+    color: #78787A;
+    font-size: rem-calc(15);
+    font-family: 'Dancing Script', cursive;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  > a {
+    display: block;
+    line-height: 0;
+    border: 5px solid rgba(141,141,141,0.4);
+    border-radius: 50%;
+    @include single-transition();
+    height: 200px;
+    width: 200px;
+    &:hover {
+      border-color: #4EB5C6;
+    }
+    > img {
+      border-radius: 50%;
+    }
+  }
+}
+
+.jobs, .interests {
+  span {
+    display: block;
+  }
+}
+.date {
+  font-size: rem-calc(15);
+  text-align: left;
+  @media #{$medium-up} {
+    font-size: rem-calc(20);
+    text-align: right;
+  }
+}
+.job {
+  padding-top: rem-calc(10);
+  padding-bottom: rem-calc(30);
+  @include single-transition();
+}
+.interest {
+  padding-top: rem-calc(10);
+  padding-bottom: rem-calc(10);
+  text-align: center;
+}
+.company {
+  font-size: rem-calc(20);
+  padding-bottom: rem-calc(7);
+  text-transform: uppercase;
+}
+.subhead {
+  font-size: rem-calc(16);
+  color: #4EB5C6;
+}
+.description {
+  font-size: rem-calc(15);
+  color: #78787A;
+}
+
+.border-left {
+  @media #{$medium-up} {
+    border-left: 1px solid #000;
+  }
+}
+.black {
+  color: #000;
+}

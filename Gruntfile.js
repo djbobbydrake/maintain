@@ -2,33 +2,33 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    sass: {
-      options: {
-        includePaths: ['bower_components/foundation/scss']
-      },
+    compass: {
       dist: {
         options: {
-          outputStyle: 'compressed'
-        },
-        files: {
-          'css/app.css': 'scss/app.scss'
-        }        
+          sassDir: 'scss',
+          cssDir: 'css',
+          javascriptsDir: 'js',
+          importPath: ['bower_components/foundation/scss'],
+          outputStyle: 'compressed',
+          relativeAssets: true,
+          noLineComments: true
+        }
       }
     },
 
     watch: {
       grunt: { files: ['Gruntfile.js'] },
 
-      sass: {
-        files: 'scss/**/*.scss',
-        tasks: ['sass']
+      css: {
+        files: ['scss/*', 'bower_components/foundation/scss'],
+        tasks: ['compass']
       }
     }
   });
 
-  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('build', ['sass']);
+  grunt.registerTask('build', ['compass']);
   grunt.registerTask('default', ['build','watch']);
 }

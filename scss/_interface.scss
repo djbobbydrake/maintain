@@ -1,0 +1,36 @@
+.interface {
+  margin-top: 50px;
+  padding-left: 15%;
+  padding-right: 15%;
+
+  textarea {
+    border: none;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    min-height: inherit;
+  }
+}
+
+#drag-elements {
+  list-style: none;
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  > li {
+    cursor: move;
+  }
+}
+
+.target {
+  background-color: rgba(204,204,204,0.3);
+  border: 2px dashed rgba(126,126,126,0.6);
+  &.medium {
+    min-height: 250px;
+  }
+}
+
+.over {
+  background-color: rgba(204,204,204,0.7);
+  border: 2px dashed rgba(126,126,126,0.9);
+}
